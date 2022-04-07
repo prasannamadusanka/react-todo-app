@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "..\\.."
+		},
+		{
+			"name": "react-todo-app",
+			"path": "..\\react-todo-app"
+		}
+	],
+	"settings": {}
+}
