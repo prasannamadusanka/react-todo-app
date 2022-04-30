@@ -1,37 +1,25 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react'
 
-class Counter extends Component{
-    constructor(){
-        super()
-        this.state={
-            counter:0,
+class  Counter extends Component {
+    constructor(props) {
+        super(props)
+      
+        this.state = {
+           count:0
         }
-    }
-
-    increment(){
-        this.setState((prevState)=>({
-            counter:prevState.counter+1,
-        }))
-    }
-
-    incrementFive(){ 
-        this.increment();
-        this.increment();
-        this.increment();
-        this.increment();
-        this.increment();
-        this.increment();
-    }
-
-
-    render(){
-        return (
-            <div>
-        <h1>Count Value : {this.state.counter}</h1>
-        <button onClick={()=>this.incrementFive()}>increment Value</button>
-        </div>
-        )
-    }
+      }
+      increment=()=>{
+          this.setState(prevState=>{
+              return {count:prevState.count+1}
+          })
+      }
+  render() {
+    return (
+      <div>
+          {this.props.render(this.state.count,this.increment)}
+      </div>
+    )
+  }
 }
 
-export default Counter;
+export default Counter
